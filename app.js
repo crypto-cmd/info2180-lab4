@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
+    const searchField = document.getElementById('search-field');
+    const resultDiv = document.getElementById('result');
 
     searchBtn.addEventListener('click', () => {
-        fetch('superheroes.php')
+        const query = searchField.value.trim();
+        const url = `superheroes.php?query=${encodeURIComponent(query)}`;
+
+        fetch(url)
             .then(response => {
                 if (response.ok) {
                     return response.text();
@@ -11,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .then(data => {
-                alert(data); // This will show the HTML list in an alert
+                resultDiv.innerHTML = data; // Display result in the div
             })
             .catch(error => console.error('Error:', error));
     });

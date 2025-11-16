@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Avengers Character Search</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Avengers Character Search</h1>
-    <button id="search-btn">Search</button>
+
+    <header>
+        <h1>AVENGERS CHARACTER SEARCH</h1>
+    </header>
+
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="search-field">Search by Full Name or Alias</label>
+                <input type="text" id="search-field" name="query" placeholder="e.g. Captain America or Steve Rogers">
+            </div>
+            <button type="button" id="search-btn">Search</button>
+        </form>
+        
+        <h2>RESULT</h2>
+        <div id="result">
+            </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
